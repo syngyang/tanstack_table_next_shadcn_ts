@@ -3,7 +3,7 @@ import {User,columns} from './columns'
 
 async function getUsers (): Promise<User[]> {
     const res = await fetch(
-        'https://658ad7f7ba789a962237fc33.mockapi.io/api/users/users'
+        process.env.MOCKAPI_USERS as string
     )
     const data = await res.json()
     return data;
