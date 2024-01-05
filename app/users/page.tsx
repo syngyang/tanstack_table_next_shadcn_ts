@@ -2,10 +2,8 @@ import { DataTable } from '@/components/data-table'
 import {User,columns} from './columns'
 
 async function getUsers (): Promise<User[]> {
-    // https://658ad7f7ba789a962237fc33.mockapi.io/api/users/:endpoint 에서 New resource 밑에 users 100의 users를 endpoint 로 사용해야 함
     const res = await fetch(
-      process.env.MOCKAPI_USERS as string
-        // 'https://658ad7f7ba789a962237fc33.mockapi.io/api/users/users'
+        'https://658ad7f7ba789a962237fc33.mockapi.io/api/users/users'
     )
     const data = await res.json()
     return data;
