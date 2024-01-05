@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Image from 'next/image'
 export type User = {
     id:string,
     name: string,
@@ -47,7 +48,16 @@ export const columns: ColumnDef<User>[] = [
     },
     {
       accessorKey:'avatar',
-      header:'Avatar'
+      header:'Avatar',
+      cell: (row) => (
+        <Image
+          src={row?.getValue() as string}
+          alt="avatar"
+          width={45}
+      height={45}
+          className="rounded-full object-cover"
+        />
+        ),
     },
     {
         accessorKey:'name',

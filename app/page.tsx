@@ -3,6 +3,7 @@ import UsersPage from './users/page'
 
 export default function Home() {
   return (
-      <UsersPage />
+      // <UsersPage />
+      <p>Hello</p>
   )
 }
